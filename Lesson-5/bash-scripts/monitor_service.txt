@@ -1,7 +1,0 @@
-What it does:
-
-    Uses systemctl to list all active services (--state=running)
-
-    Filters and formats the output using awk and sed
-
-    Displays only the service names
