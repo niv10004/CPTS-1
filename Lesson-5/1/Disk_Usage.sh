@@ -20,3 +20,5 @@ df -hT -x tmpfs -x devtmpfs | awk 'NR>1 {print $7, $3, $4, $6}' | while read mou
     echo
   fi
 done
+
+
