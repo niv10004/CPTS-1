@@ -1,5 +1,5 @@
 $ComputerName = "localhost"
-$Ports = @(21, 22, 23, 25, 80, 110, 135, 139, 445, 3389)
+$Ports = @(21, 22, 23, 25, 80, 110, 135, 139, 443, 445, 3389)
 
 Write-Host "Checking ports on $ComputerName..."
 
