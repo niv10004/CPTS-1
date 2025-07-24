@@ -13,7 +13,7 @@ scan_port() {
   if timeout 1 bash -c "echo > /dev/tcp/$TARGET/$port" 2>/dev/null; then
     echo "[+] Port $port is open"
 
-    # Try to grab the banner
+    
     banner=$(timeout 2 bash -c "exec 3<>/dev/tcp/$TARGET/$port; head -n 1 <&3" 2>/dev/null)
     if [ -n "$banner" ]; then
       echo "    Banner: $banner"
@@ -26,5 +26,5 @@ scan_port() {
 export -f scan_port
 export TARGET
 
-# Run the scan in parallel
+
 seq 1 1024 | xargs -n1 -P "$MAX_PROCESSES" bash -c 'scan_port "$@"' _
